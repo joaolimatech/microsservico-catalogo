@@ -1,0 +1,6 @@
+com\poo\microsservicos\controller\ProdutoController.class
+com\poo\microsservicos\MicrosservicosApplication.class
+com\poo\microsservicos\model\ProdutoModel.class
+com\poo\microsservicos\repository\ProdutoRepository.class
+com\poo\microsservicos\service\ProdutoService.class
+com\poo\microsservicos\config\SecurityConfig.class
