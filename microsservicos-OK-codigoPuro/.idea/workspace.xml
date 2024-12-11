@@ -7,6 +7,9 @@
     <list default="true" id="be6ff14b-57dc-4ef9-b0cd-1da33467f17d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/microsservicos/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/microsservicos/controller/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/microsservicos/service/ProdutoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/microsservicos/service/ProdutoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +68,7 @@
       <recent name="com.poo.microsservicos.config" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in microsservicos">
+  <component name="RunManager" selected="Application.MicrosservicosApp">
     <configuration name="MicrosservicosApp" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.poo.microsservicos.MicrosservicosApplication" />
       <module name="microsservicos" />
@@ -99,6 +102,6 @@
     <servers />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/microsservicos_OK_codigoPuro$All_in_microsservicos.ic" NAME="All in microsservicos Coverage Results" MODIFIED="1733944779544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/microsservicos_OK_codigoPuro$All_in_microsservicos.ic" NAME="All in microsservicos Coverage Results" MODIFIED="1733946488227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class ProdutoService {
 
-    @Autowired
+    @Autowired // @Autowired instância do repositoiy gerenciada pelo Spring.
     private ProdutoRepository produtoRepository;
 
     public ProdutoModel criarProduto(ProdutoModel produto) {
@@ -28,8 +28,7 @@ public class ProdutoService {
     }
 
     public ProdutoModel atualizarProduto(Long id, ProdutoModel produtoAtualizado) {
-        ProdutoModel produto = produtoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+        ProdutoModel produto = produtoRepository.findById(id).orElseThrow(() -> new RuntimeException("Produto não encontrado")); //vai na model, na tabeela e ve se o produto esta la ou nao foi encontrado
 
         produto.setNome(produtoAtualizado.getNome());
         produto.setDescricao(produtoAtualizado.getDescricao());
@@ -42,34 +41,35 @@ public class ProdutoService {
         produtoRepository.deleteById(id);
     }
 
-    // Método para realizar a venda de um produto com cálculo de valor total
+    // reailza venda do produto com o calculo total. Tbm mostra caso nn encontre
     public BigDecimal venderProdutoComCalculo(Long id, int quantidadeVendida) {
         ProdutoModel produto = produtoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
 
         if (produto.getQuantidade() < quantidadeVendida) {
-            throw new RuntimeException("Quantidade em estoque insuficiente.");
+            throw new RuntimeException("Quantidade em estoque insuficiente :(");
         }
 
-        // Atualiza o estoque
+        // ataulzia o estoque
         produto.setQuantidade(produto.getQuantidade() - quantidadeVendida);
         produtoRepository.save(produto);
 
-        // Calcula o valor total da venda
+        // calc o valor total da venda
+        //bigDecimal é um float para numeros bem grandes, geralmente dizem q é pra dinheiro
         BigDecimal valorUnitario = produto.getPreco();
         BigDecimal quantidade = BigDecimal.valueOf(quantidadeVendida);
         BigDecimal valorTotal = valorUnitario.multiply(quantidade);
 
-        // Aplica o desconto de 10% se a quantidade for 5 ou mais
+        // apica o desconto de 10% se a vender +de4 produtos do msm ID
         if (quantidadeVendida >= 5) {
-            BigDecimal desconto = valorTotal.multiply(BigDecimal.valueOf(0.10)); // 10% de desconto
+            BigDecimal desconto = valorTotal.multiply(BigDecimal.valueOf(0.10));
             valorTotal = valorTotal.subtract(desconto);
         }
 
         return valorTotal;
     }
 
-    // Método para aumentar o estoque de um produto
+    // aumetna qtde do produto especifico no estoque
     public ProdutoModel aumentarEstoque(Long id, int quantidadeAdicionada) {
         ProdutoModel produto = produtoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
